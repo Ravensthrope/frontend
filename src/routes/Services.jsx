@@ -1,4 +1,3 @@
-<<<<<<< HEAD
   import React from "react";
   import { Footer, Navbar, SectionName } from "../components/index";
   import { ArrowRight } from 'lucide-react';
@@ -160,4 +159,3 @@ const Services = () => {
 };
 
 export default Services;
->>>>>>> 1f6078873885e8a254f538bbe62b814db4fa816c
