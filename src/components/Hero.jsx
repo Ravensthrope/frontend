@@ -52,12 +52,13 @@ const Hero = () => {
               objectives, enabling them to make informed decisions and stay
               ahead in the competitive market.
             </p>
+            <Link to="/About">
             <button
-              to="/About"
               className="ease-in-out duration-300 bg-blue-300 hover:bg-yellow-300 rounded-full md:h-16 md:w-36 h-12 w-32 text-green-950"
             >
               Read More
             </button>
+            </Link>
           </div>
           <div>
             <img src={nextLevel} alt="next level" />
