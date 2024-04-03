@@ -1,7 +1,6 @@
 import React from "react";
 import { Footer, Navbar, SectionName } from "../components/index";
 import frontend from "./images/pr1.png";
-import { Footer, Navbar,Front } from "../components/index";
 import Gym from "./images/Gym.jpeg";
 import Import from "./images/Import.jpeg";
 import Data from "./images/Data.jpeg";
@@ -76,7 +75,6 @@ const Projects = () => {
       <section className="grid md:grid-cols-12 gap-4 md:max-w-[100%] p-4 h-fit max-w-[95%] mx-auto bg-[#e0d6c6]">
           <SectionName title="Projects"/>
         </section>
-      <Front service="Our Projects" />
       <section className="p-8 md:max-w-[100%] mx-auto bg-[#F6F3EE] flex flex-wrap justify-center gap-10">
         {cardsData.map((card) => (
           <div key={card.id} className="max-w-sm rounded overflow-hidden shadow-lg bg-white transition duration-200 ease-in-out transform hover:scale-105  relative group">
