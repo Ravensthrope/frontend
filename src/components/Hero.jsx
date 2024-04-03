@@ -32,7 +32,7 @@ const Hero = () => {
           </Link>
           <Link
             to="/Contact"
-            className="ease-in-out duration-500 border-2 border-green-950 hover:bg-green-950 hover:text-white rounded-full md:h-14 md:w-36 text-green-950 h-12 w-32 p-3"
+            className="ease-in-out duration-500 border-2 border-green-950 hover:bg-green-950 hover:text-white rounded-full md:h-14 md:w-40 text-green-950 h-12 w-32 p-2"
           >
             Contact Us
           </Link>
