@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Moon, Linkedin, Github, Twitter } from "lucide-react";
+import { Moon, Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,7 +22,12 @@ const Footer = () => {
                 className="no-underline hover:scale-125 transition-all duration-500"
               >
                 <li>
-                  <Linkedin size={20} strokeWidth={1.25} />
+                  <a
+                    href="https://www.linkedin.com/company/103387153"
+                    target="_blanck"
+                  >
+                    <Linkedin size={20} strokeWidth={1.25} />
+                  </a>
                 </li>
               </a>
               <a
@@ -30,7 +35,12 @@ const Footer = () => {
                 className="no-underline hover:scale-125 transition-all duration-500"
               >
                 <li>
-                  <Github size={20} strokeWidth={1.25} />
+                  <a
+                    href="https://www.instagram.com/sastechventures/"
+                    target="_blanck"
+                  >
+                    <Instagram size={20} strokeWidth={1.25} />
+                  </a>
                 </li>
               </a>
               <a
@@ -38,7 +48,12 @@ const Footer = () => {
                 className="no-underline hover:scale-125 transition-all duration-500"
               >
                 <li>
-                  <Twitter size={20} strokeWidth={1.25} />
+                  <a
+                    href="https://twitter.com/sAsTechVentures"
+                    target="_blanck"
+                  >
+                    <Twitter size={20} strokeWidth={1.25} />
+                  </a>
                 </li>
               </a>
             </ul>

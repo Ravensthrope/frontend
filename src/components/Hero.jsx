@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import hero from "../assets/Hero.png";
 import nextLevel from "../assets/nextLevel.svg";
 import { ServiceSelection, Footer } from "./index";
 import { Link } from "react-router-dom";
-
 
 const Hero = () => {
   return (
@@ -14,7 +13,6 @@ const Hero = () => {
             The Freedom To Focus On Improving Your Technology
           </p>
         </div>
-
         <div className="text-center">
           <p className="text-2xl">
             We design and develop custom software applications tailored to
@@ -22,7 +20,6 @@ const Hero = () => {
             productivity.
           </p>
         </div>
-
         <div className="text-center flex gap-4 md:text-2xl text-xl">
           <Link
             to="/About"
@@ -40,7 +37,6 @@ const Hero = () => {
         <div className="">
           <img src={hero} alt="Hero" />
         </div>
-
         <div className="text-left max-w-[1000px] grid md:grid-cols-2">
           <div className="flex gap-y-4 flex-col">
             <p className="sm:text-6xl text-4xl font-semibold ">
@@ -53,19 +49,19 @@ const Hero = () => {
               ahead in the competitive market.
             </p>
             <Link to="/About">
-            <button
-              className="ease-in-out duration-300 bg-blue-300 hover:bg-yellow-300 rounded-full md:h-16 md:w-36 h-12 w-32 text-green-950"
-            >
-              Read More
-            </button>
+              <button className="ease-in-out duration-300 bg-blue-300 hover:bg-yellow-300 rounded-full md:h-16 md:w-36 h-12 w-32 text-green-950">
+                Read More
+              </button>
             </Link>
           </div>
+
           <div>
             <img src={nextLevel} alt="next level" />
           </div>
         </div>
         <ServiceSelection />
       </section>
+
       <section className="md:max-w-[98%] mx-auto">
         <Footer />
       </section>

@@ -7,6 +7,7 @@
   import Testing from "./images/Testing.svg";
   import webdesign from "./images/webdesign.svg";
   import Database from "./images/Database.svg";
+  import digitalMarketing from "./images/digitalMarketing.svg"
 
   const cardsData = [
     {
@@ -45,6 +46,12 @@
       image: frontend, 
       description: "Ensuring software quality through comprehensive testing.",
     },
+    {
+      id: 7,
+      title: "Digital Marketing",
+      image: digitalMarketing,
+      description: "Promoting businesses and brands through digital channels to reach and engage with target audiences.",
+    },
   ];
 
   const Services = () => {
@@ -64,7 +71,7 @@
                 />
               </div>
               <div className="px-6 py-4">
-                <div className="font-bold text-lg mb-2 text-center text-2xl">{card.title}</div>
+                <div className="font-bold text-lg mb-2 text-center md:text-2xl">{card.title}</div>
                 <p className="text-gray-700 text-center md:text-xl">{card.description}</p>
                 <div className="flex items-center justify-center mb-2 mt-3">
                   <ArrowRight size={40} strokeWidth={1.5} />
