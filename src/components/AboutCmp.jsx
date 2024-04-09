@@ -1,16 +1,57 @@
-import React from "react";
-import { SectionName } from "./index"
+import React, { useEffect, useRef } from "react";
+import { SectionName } from "./index";
 import leftHeroAbout from "../assets/leftHeroAbout.svg";
 import { Check } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
 
 const AboutCmp = () => {
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+
+  useEffect(() => {
+    const handleScroll1 = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const elementOffsetTop = ref1.current.offsetTop;
+
+      if (scrollY + windowHeight > elementOffsetTop + 100) {
+        controls1.start({ opacity: 1, y: 0 });
+      }
+    };
+
+    const handleScroll2 = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const elementOffsetTop = ref2.current.offsetTop;
+
+      if (scrollY + windowHeight > elementOffsetTop + 100) {
+        controls2.start({ opacity: 1, y: 0 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll1);
+    window.addEventListener("scroll", handleScroll2);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll1);
+      window.removeEventListener("scroll", handleScroll2);
+    };
+  }, [controls1, controls2]);
+
   return (
     <main>
       <section className="grid md:grid-cols-12 gap-4 md:max-w-[100%] p-4 h-fit max-w-[95%] mx-auto bg-[#e0d6c6]">
-        <SectionName title="About Us"/>
+        <SectionName title="About Us" />
       </section>
 
-      <section className="grid md:grid-cols-2 gap-4 text-green-950 p-4">
+      <motion.section
+        ref={ref1}
+        initial={{ opacity: 0, y: 50 }}
+        animate={controls1}
+        className="grid md:grid-cols-2 gap-4 text-green-950 p-4"
+      >
         <div className="md:col-span-1">
           <img src={leftHeroAbout} alt="leftHeroAbout" />
         </div>
@@ -48,9 +89,14 @@ const AboutCmp = () => {
             </li>
           </ul>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="h-fit md:max-w-[90%] max-w-[95%] rounded-lg bg-green-950 grid md:grid-cols-12 grid-cols-6 text-white mx-auto m-4 p-4">
+      <motion.section
+        ref={ref2}
+        initial={{ opacity: 0, y: 50 }}
+        animate={controls2}
+        className="h-fit md:max-w-[90%] max-w-[95%] rounded-lg bg-green-950 grid md:grid-cols-12 grid-cols-6 text-white mx-auto m-4 p-4"
+      >
         <div className="md:col-span-6 col-span-6">
           <h1 className="lg:text-9xl md:text-7xl text-4xl text-left flex items-center justify-center">
             Why Choose Us?
@@ -84,7 +130,7 @@ const AboutCmp = () => {
             ensure your project's success.
           </p>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 };

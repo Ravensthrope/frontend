@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Moon, Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const elementOffsetTop = ref.current.offsetTop;
+
+      if (scrollY + windowHeight > elementOffsetTop + 100) {
+        controls.start({ opacity: 1, y: 0 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
   return (
     <>
-      <div className="w-full h-fit bg-blue-300 rounded-lg grid gap-y-4 md:grid-cols-12 grid-cols-6 p-8 mb-8 text-green-950">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={controls}
+        className="w-full h-fit bg-blue-300 rounded-lg grid gap-y-4 md:grid-cols-12 grid-cols-6 p-8 mb-8 text-green-950"
+      >
         <div className="md:col-span-8 col-span-3">
           <div className="flex flex-col gap-y-6">
             <div className="flex gap-x-2 items-center justify-start">
@@ -109,7 +135,7 @@ const Footer = () => {
           <h4>Powered by Humans</h4>
           <h4>Created by sAs Developers</h4>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
